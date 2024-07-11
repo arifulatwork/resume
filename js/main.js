@@ -6,6 +6,18 @@ const portfolioItems = [
         demoLink: 'https://addarapp.com/docs/addar-manual-110.pdf'
     },
     {
+        img: './assets/images/flowyteam.png',
+        title: 'FlowyTeam',
+        description: "It's a project management system that competes with various other tools in today's market. When I joined Flowy Sdn Bhd, my initial assignment was to fix bugs throughout the system. After successfully resolving the bugs, I transitioned to a new project to enhance it further.",
+        demoLink: 'https://flowyteam.com/'
+    },
+    {
+        img: './assets/images/okri.png',
+        title: 'OKRI',
+        description: "After completing work on Flowyetam, I was assigned to Okri.io, which has similar functionalities but is intended for a low-budget company.",
+        demoLink: 'https://okri.io/login'
+    },
+    {
         img: './assets/images/hitech.jpeg',
         title: 'Hi-Tech Web Application',
         description: 'During the COVID-19 pandemic in 2020, despite juggling university classes, I successfully developed this freelance project—a website completed within just 25 days.',
