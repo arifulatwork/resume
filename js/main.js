@@ -11,6 +11,18 @@ const portfolioItems = [
         description: 'During the COVID-19 pandemic in 2020, despite juggling university classes, I successfully developed this freelance project—a website completed within just 25 days.',
         demoLink: 'https://hi-techengineering.com/management/'
     },
+    {
+        img: './assets/images/iptv.jpeg',
+        title: 'Personal Project IPTV Application',
+        description: 'Due to the lack of reliable IPTV providers in my country, all existing apps suffer from lags and loading issues. Therefore, I developed a custom IPTV application for my household, providing my family with a seamless mobile streaming experience free from buffering.',
+        demoLink: '#'
+    },
+    {
+        img: './assets/images/chatbot.png',
+        title: 'Chatbot PHP',
+        description: 'In my web programming class in 2018, I completed a project that earned me the highest grade. i am m looking to improve upon it.',
+        demoLink: 'https://github.com/arifulUTM/Chatbot-with-PHP'
+    },
     // Add more portfolio items as needed
 ];
 
