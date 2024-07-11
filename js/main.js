@@ -23,6 +23,18 @@ const portfolioItems = [
         description: 'In my web programming class in 2018, I completed a project that earned me the highest grade. i am m looking to improve upon it.',
         demoLink: 'https://github.com/arifulUTM/Chatbot-with-PHP'
     },
+    {
+        img: './assets/images/chatbot.png',
+        title: 'Lost and Found Application',
+        description: 'This project aimed to facilitate the easy retrieval of lost items through the use of Servlets, JSP, Maven, and MySQL.',
+        demoLink: 'https://github.com/arifulUTM/Lost-and-Found'
+    },
+    {
+        img: './assets/images/chatbot.png',
+        title: 'Unique Class Managment System',
+        description: 'This project was a part of our Application Development course, completed with a team of four members under the guidance of Dr. Ahmad Fadhil Yusof during my university years.',
+        demoLink: 'https://github.com/arifulUTM/Application-Development-Project-UTM-2020'
+    },
     // Add more portfolio items as needed
 ];
 
