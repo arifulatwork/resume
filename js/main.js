@@ -14,13 +14,13 @@ const portfolioItems = [
     {
         img: './assets/images/okri.png',
         title: 'OKRI',
-        description: "After completing work on Flowyetam, I was assigned to Okri.io, which has similar functionalities but is intended for a low-budget company.",
+        description: "After completing work on Flowyetam, I was assigned to Okri.io. It has similar functionalities but is designed for a low-budget company, focusing on delivering efficient, cost-effective solutions without compromising quality. This project further honed my skills in resource optimization.",
         demoLink: 'https://okri.io/login'
     },
     {
         img: './assets/images/hitech.jpeg',
         title: 'Hi-Tech Web Application',
-        description: 'During the COVID-19 pandemic in 2020, despite juggling university classes, I successfully developed this freelance project—a website completed within just 25 days.',
+        description: "During the COVID-19 pandemic in 2020, despite juggling university classes, I successfully developed this freelance project—a website completed within just 25 days. This experience demonstrated my ability to manage time effectively and meet tight deadlines.",
         demoLink: 'https://hi-techengineering.com/management/'
     },
     {
@@ -32,19 +32,19 @@ const portfolioItems = [
     {
         img: './assets/images/chatbot.png',
         title: 'Chatbot PHP',
-        description: 'In my web programming class in 2018, I completed a project that earned me the highest grade. i am m looking to improve upon it.',
+        description: "In my web programming class in 2018, I completed a chatbot application project that earned me the highest grade. Having successfully executed this project, I aim to enhance it by incorporating advanced techniques and modern design principles for a more sophisticated user experience.",
         demoLink: 'https://github.com/arifulUTM/Chatbot-with-PHP'
     },
     {
         img: './assets/images/chatbot.png',
         title: 'Lost and Found Application',
-        description: 'This project aimed to facilitate the easy retrieval of lost items through the use of Servlets, JSP, Maven, and MySQL.',
+        description: "This project aimed to facilitate the easy retrieval of lost items through the use of Servlets, JSP, Maven, and MySQL. It involved developing a robust web application with features like item registration, search functionalities, and user authentication to streamline the process effectively",
         demoLink: 'https://github.com/arifulUTM/Lost-and-Found'
     },
     {
         img: './assets/images/chatbot.png',
         title: 'Unique Class Managment System',
-        description: 'This project was a part of our Application Development course, completed with a team of four members under the guidance of Dr. Ahmad Fadhil Yusof during my university years.',
+        description: "This project was a part of our Application Development course, completed with a team of four members under the guidance of Dr. Ahmad Fadhil Yusof during my university years. It provided valuable experience in collaborative software development and project management.",
         demoLink: 'https://github.com/arifulUTM/Application-Development-Project-UTM-2020'
     },
     // Add more portfolio items as needed
