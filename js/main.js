@@ -12,7 +12,7 @@ const portfolioItems = [
         demoLink: 'https://flowyteam.com/'
     },
     {
-        img: './assets/images/okri.png',
+        img: './assets/images/pokri.png',
         title: 'OKRI',
         description: "After completing work on Flowyetam, I was assigned to Okri.io. It has similar functionalities but is designed for a low-budget company, focusing on delivering efficient, cost-effective solutions without compromising quality. This project further honed my skills in resource optimization.",
         demoLink: 'https://okri.io/login'
