@@ -36,6 +36,12 @@ const portfolioItems = [
         demoLink: 'https://github.com/arifulUTM/Chatbot-with-PHP'
     },
     {
+        img: './assets/images/pmsri.png',
+        title: 'Malaysian Social Research Institute',
+        description: "During my time at TraitQuest, I developed a web application for a Malaysian client. You can click the link to explore the site in more detail.",
+        demoLink: "https://msri.org.my/"
+    },
+    {
         img: './assets/images/chatbot.png',
         title: 'Lost and Found Application',
         description: "This project aimed to facilitate the easy retrieval of lost items through the use of Servlets, JSP, Maven, and MySQL. It involved developing a robust web application with features like item registration, search functionalities, and user authentication to streamline the process effectively",
@@ -46,6 +52,12 @@ const portfolioItems = [
         title: 'Unique Class Managment System',
         description: "This project was a part of our Application Development course, completed with a team of four members under the guidance of Dr. Ahmad Fadhil Yusof during my university years. It provided valuable experience in collaborative software development and project management.",
         demoLink: 'https://github.com/arifulUTM/Application-Development-Project-UTM-2020'
+    },
+    {
+        img: './assets/images/chatbot.png',
+        title: 'FAQ section',
+        description: "I recently created an FAQ section for Bangladeshi students interested in studying in Latvia. This resource aims to address their many questions and provide better guidance.",
+        demoLink: 'https://arifulatwork.github.io/lv-ariful.github.io/'
     },
     // Add more portfolio items as needed
 ];
