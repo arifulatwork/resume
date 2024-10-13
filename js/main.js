@@ -6,6 +6,12 @@ const portfolioItems = [
         demoLink: 'https://addarapp.com/docs/addar-manual-110.pdf'
     },
     {
+        img: './assets/images/restoran.png',
+        title: 'Restoran Nasi Lounge',
+        description: 'This project is an online food ordering system that simplifies the ordering process for restaurants. It enables customers to order online and allows restaurants to manage promotions, track customer benefits, and improve engagement.',
+        demoLink: 'https://addarapp.com/docs/addar-manual-110.pdf'
+    },
+    {
         img: './assets/images/flowyteam.png',
         title: 'FlowyTeam',
         description: "It's a project management system that competes with various other tools in today's market. When I joined Flowy Sdn Bhd, my initial assignment was to fix bugs throughout the system. After successfully resolving the bugs, I transitioned to a new project to enhance it further.",
