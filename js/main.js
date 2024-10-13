@@ -88,3 +88,28 @@ document.getElementById('next').addEventListener('click', () => {
 
 // Initialize the first portfolio item
 showPortfolioItem(currentIndex);
+
+// switch remote to city
+
+const locationElement = document.getElementById("location");
+            const locations = ["🏴 Liepāja, Latvia", "🏡 Working Remotely"];
+            let index = 0;
+    
+            setInterval(() => {
+                index = (index + 1) % locations.length;
+                locationElement.textContent = locations[index];
+            }, 10000); // 10000 milliseconds = 10 seconds
+
+// switch between two email addresses
+
+const emailElement = document.getElementById("email");
+        const emails = [
+            '✉️ <a href="mailto:arifulatwork@gmail.com">arifulatwork@gmail.com</a>',
+            '🎓 <a href="mailto:Emde-Arifuls.Islams@edu.rtu.lv">Emde-Arifuls.Islams@edu.rtu.lv</a>'
+        ];
+        let emailIndex = 0;
+
+        setInterval(() => {
+            emailIndex = (emailIndex + 1) % emails.length;
+            emailElement.innerHTML = emails[emailIndex];
+        }, 10000); // 10000 milliseconds = 10 seconds
