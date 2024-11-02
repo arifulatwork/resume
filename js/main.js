@@ -6,6 +6,12 @@ const portfolioItems = [
         demoLink: 'https://addarapp.com/docs/addar-manual-110.pdf'
     },
     {
+        img: './assets/images/bravori.png',
+        title: 'Bravori',
+        description: 'Recently, I fixed many bugs in an application called Bravori, which is built on React Native. This application is designed for a music school where children learn about music.',
+        demoLink: 'https://play.google.com/store/apps/details?id=com.bravorimusic.bravori'
+    },
+    {
         img: './assets/images/restoran.png',
         title: 'Restoran Nasi Lounge',
         description: 'This project is an online food ordering system that simplifies the ordering process for restaurants. It enables customers to order online and allows restaurants to manage promotions, track customer benefits, and improve engagement.',
@@ -24,7 +30,7 @@ const portfolioItems = [
         demoLink: 'https://okri.io/login'
     },
     {
-        img: './assets/images/hitech.jpeg',
+        img: './assets/images/hitech.png',
         title: 'Hi-Tech Web Application',
         description: "During the COVID-19 pandemic in 2020, despite juggling university classes, I successfully developed this freelance project—a website completed within just 25 days. This experience demonstrated my ability to manage time effectively and meet tight deadlines.",
         demoLink: 'https://hi-techengineering.com/management/'
