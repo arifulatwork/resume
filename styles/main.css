@@ -270,3 +270,15 @@ li{
         padding-left: 0;
     }
 }
+
+
+#languages-list {
+    list-style: none;
+    padding: 0;
+}
+
+#languages-list li {
+    line-height: 1.9em; /* Matches your other lists */
+    color: var(--secondaryTextColor);
+}
+
