@@ -272,6 +272,8 @@ li{
 }
 
 
+/* Language and Current Focus */
+
 #languages-list {
     list-style: none;
     padding: 0;
@@ -282,3 +284,37 @@ li{
     color: var(--secondaryTextColor);
 }
 
+
+#current-focus {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    background-color: var(--mainBgColor);
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 10px;
+    padding: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.focus-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.focus-item:hover {
+    background-color: rgba(13, 162, 184, 0.1); /* Light hover effect */
+}
+
+.focus-icon {
+    font-size: 24px; /* Bigger icon size */
+    margin-right: 1em; /* Space between icon and text */
+}
+
+.focus-text {
+    color: var(--secondaryTextColor);
+    font-size: 1em;
+}
