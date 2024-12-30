@@ -22,3 +22,11 @@ This website has no auto toggle theme switcher, therefor to change themes you mu
 --mainBorderColor:var(--mainBorderColor-light);
 --mainBgColor:var(--mainBgColor-light);
 ```
+
+```css
+--mainTextColor:var(--mainTextColor-dark);
+    --secondaryTextColor:var(--secondaryTextColor-dark);
+    --mainLinkColor:var(--mainLinkColor-dark);
+    --mainBorderColor:var(--mainBorderColor-dark);
+    --mainBgColor:var(--mainBgColor-dark);
+    ```
