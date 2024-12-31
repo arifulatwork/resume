@@ -318,3 +318,37 @@ li{
     color: var(--secondaryTextColor);
     font-size: 1em;
 }
+
+
+/* Scroll on Work History  */
+
+/* Single scrollable container for all work history entries */
+.work-history-scroll {
+    max-height: 500px; /* Adjust height as necessary */
+    overflow-y: scroll; /* Enable scrolling */
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 5px;
+    background-color: var(--mainBgColor);
+}
+
+/* Styling for each individual card */
+.card--work-history {
+    padding: 1em;
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.card--work-history ul {
+    list-style: disc inside;
+    padding-left: 1em;
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 600px) {
+    .work-history-scroll {
+        max-height: 600px; /* Increased max-height for larger screens */
+    }
+}
