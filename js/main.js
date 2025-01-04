@@ -117,7 +117,8 @@ const locationElement = document.getElementById("location");
 const emailElement = document.getElementById("email");
         const emails = [
             '✉️ <a href="mailto:arifulatwork@gmail.com">arifulatwork@gmail.com</a>',
-            '🎓 <a href="mailto:Emde-Arifuls.Islams@edu.rtu.lv">Emde-Arifuls.Islams@edu.rtu.lv</a>'
+            '🎓 <a href="mailto:Md-Ariful.Islam@edu.rtu.lv">Md-Ariful.Islam@edu.rtu.lv</a>',
+            '🎓 <a href="mailto:Md-Ariful.Islam@rtu.lv">Md-Ariful.Islam@rtu.lv</a>'
         ];
         let emailIndex = 0;
 
