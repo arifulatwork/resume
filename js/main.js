@@ -138,3 +138,53 @@ menuToggle.addEventListener('click', () => {
   menuToggle.classList.toggle('active');
   navbarLinks.classList.toggle('active');
 });
+
+
+// Start Animation Programming JS
+
+// Programming languages to display
+const languages = ["Python", "JavaScript", "Java", "C++", "Ruby", "Go", "Rust", "PHP", "Kotlin"];
+
+// Create a container for the animated languages
+const container = document.getElementById("animated-background");
+
+// Function to generate random position
+function randomPosition(side) {
+  const top = Math.random() * 100; // Random vertical position (0-100%)
+  const left = side === "left" ? Math.random() * 5 + 1 : 95 - Math.random() * 5; // Left (1-5%) or right (95-99%)
+  return { top: `${top}%`, left: `${left}%` };
+}
+
+// Function to create floating elements
+function createLanguageElement(language, side) {
+  const span = document.createElement("span");
+  span.classList.add("language");
+  span.textContent = language;
+
+  const { top, left } = randomPosition(side);
+  span.style.top = top;
+  span.style.left = left;
+
+  // Add random animation duration
+  span.style.animation = `float ${Math.random() * 5 + 10}s infinite ease-in-out`;
+
+  return span;
+}
+
+// Add languages dynamically to the container
+languages.forEach((language, index) => {
+  const side = index % 2 === 0 ? "left" : "right";
+  const languageElement = createLanguageElement(language, side);
+  container.appendChild(languageElement);
+});
+
+// Keyframe animations
+const style = document.createElement("style");
+style.innerHTML = `
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 0.5; }
+    50% { transform: translateY(-20px) scale(1.1); opacity: 0.7; }
+    100% { transform: translateY(20px) scale(1); opacity: 0.5; }
+  }
+`;
+document.head.appendChild(style);
