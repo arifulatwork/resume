@@ -126,3 +126,15 @@ const emailElement = document.getElementById("email");
             emailIndex = (emailIndex + 1) % emails.length;
             emailElement.innerHTML = emails[emailIndex];
         }, 10000); // 10000 milliseconds = 10 seconds
+
+
+// Navbar
+
+const menuToggle = document.getElementById('menu-toggle');
+const navbarLinks = document.getElementById('navbar-links');
+
+// Toggle menu on click
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  navbarLinks.classList.toggle('active');
+});

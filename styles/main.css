@@ -352,3 +352,104 @@ li{
         max-height: 600px; /* Increased max-height for larger screens */
     }
 }
+
+
+/* Navbar Start  */
+
+/* General Navbar Styles */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--mainBgColor);
+    color: var(--mainTextColor);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+  }
+  
+  #logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--mainTextColor);
+    text-decoration: none;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: var(--secondaryTextColor);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .navbar-links a:hover {
+    color: var(--mainLinkColor);
+  }
+  
+  /* Mobile Menu Toggle */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.3em;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--mainTextColor);
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  /* Active States for Mobile Menu */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      gap: 1em;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: var(--mainBgColor);
+      width: 100%;
+      padding: 1em;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .navbar-links.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  }
+  
