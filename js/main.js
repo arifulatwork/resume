@@ -1,5 +1,11 @@
 const portfolioItems = [
     {
+        img: './assets/images/azan.PNG',
+        title: 'Prayer-Time-PC-Application',
+        description: 'This application helps users track their prayer times during work on a PC. It notifies you of prayer times throughout the day, allowing you to stay focused on your tasks while keeping track of your religious duties.',
+        demoLink: 'https://github.com/arifulatwork/Prayer-Time-PC-Application'
+    },
+    {
         img: './assets/images/addarapp.png',
         title: 'Addar Beauty Application',
         description: 'In September 2022, I was assigned to a freelance project with Rubysoft Sdn Bhd to develop an application called Addar Beauty. During this project, I created numerous features for the app and authored a comprehensive user manual for primary users.',
