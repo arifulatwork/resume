@@ -1,83 +1,112 @@
 const portfolioItems = [
     {
-        img: './assets/images/azan.PNG',
-        title: 'Prayer-Time-PC-Application',
-        description: 'This application helps users track their prayer times during work on a PC. It notifies you of prayer times throughout the day, allowing you to stay focused on your tasks while keeping track of your religious duties.',
-        demoLink: 'https://github.com/arifulatwork/Prayer-Time-PC-Application'
+        img: './assets/images/bravori.png',
+        title: 'Bravori',
+        description: 'Fixed multiple bugs in a React Native music school application designed for children to learn music. Improved performance and user experience.',
+        demoLink: 'https://play.google.com/store/apps/details?id=com.bravorimusic.bravori'
+    },
+    {
+        img: './assets/images/unique-class.png',
+        title: 'Unique Class Management System',
+        description: 'A collaborative project from my university course under Dr. Ahmad Fadhil Yusof. Gained hands-on experience in teamwork, software development, and project management.',
+        demoLink: 'https://github.com/arifulUTM/Application-Development-Project-UTM-2020'
     },
     {
         img: './assets/images/addarapp.png',
         title: 'Addar Beauty Application',
-        description: 'In September 2022, I was assigned to a freelance project with Rubysoft Sdn Bhd to develop an application called Addar Beauty. During this project, I created numerous features for the app and authored a comprehensive user manual for primary users.',
+        description: 'Freelance project for Rubysoft Sdn Bhd to develop a beauty services application. Created features and authored a comprehensive user manual for primary users.',
         demoLink: 'https://addarapp.com/docs/addar-manual-110.pdf'
     },
     {
-        img: './assets/images/bravori.png',
-        title: 'Bravori',
-        description: 'Recently, I fixed many bugs in an application called Bravori, which is built on React Native. This application is designed for a music school where children learn about music.',
-        demoLink: 'https://play.google.com/store/apps/details?id=com.bravorimusic.bravori'
+        img: './assets/images/portfolio.png',
+        title: 'Lost and Found Web Application',
+        description: 'Developed a robust lost-and-found web platform using Servlets, JSP, Maven, and MySQL with item registration, search, and authentication features.',
+        demoLink: 'https://github.com/arifulUTM/Lost-and-Found'
+    },
+    {
+        img: './assets/images/covid-tracker.png',
+        title: 'Covid Tracker',
+        description: 'React.js application showing real-time COVID-19 stats using Disease.sh API. Includes filtering by country and interactive map visualization.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
+    },
+    {
+        img: './assets/images/stock-predictor.png',
+        title: 'Stock Predictor',
+        description: 'A stock prediction system with React.js frontend, Flask backend, and TensorFlow-trained models predicting opening and closing prices.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
+    },
+    {
+        img: './assets/images/finditjobs.png',
+        title: 'FindITJobs Web Application',
+        description: 'A dynamic Laravel job portal with integrated admin panel for job postings, applications, and user management to streamline operations.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
+    },
+    {
+        img: './assets/images/classified-marketplace.png',
+        title: 'Classified Marketplace Application',
+        description: 'A Laravel-based buying and selling platform with authentication, listing management, search filters, and secure transaction handling.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
+    },
+    {
+        img: './assets/images/pos.png',
+        title: 'Point-of-Sales System',
+        description: 'PHP-based POS system following MVC architecture, including inventory management, sales tracking, user authentication, and reporting.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
     },
     {
         img: './assets/images/restoran.png',
         title: 'Restoran Nasi Lounge',
-        description: 'This project is an online food ordering system that simplifies the ordering process for restaurants. It enables customers to order online and allows restaurants to manage promotions, track customer benefits, and improve engagement.',
-        demoLink: 'https://addarapp.com/docs/addar-manual-110.pdf'
-    },
-    {
-        img: './assets/images/flowyteam.png',
-        title: 'FlowyTeam',
-        description: "It's a project management system that competes with various other tools in today's market. When I joined Flowy Sdn Bhd, my initial assignment was to fix bugs throughout the system. After successfully resolving the bugs, I transitioned to a new project to enhance it further.",
-        demoLink: 'https://flowyteam.com/'
-    },
-    {
-        img: './assets/images/pokri.png',
-        title: 'OKRI',
-        description: "After completing work on Flowyetam, I was assigned to Okri.io. It has similar functionalities but is designed for a low-budget company, focusing on delivering efficient, cost-effective solutions without compromising quality. This project further honed my skills in resource optimization.",
-        demoLink: 'https://okri.io/login'
-    },
-    {
-        img: './assets/images/hitech.png',
-        title: 'Hi-Tech Web Application',
-        description: "During the COVID-19 pandemic in 2020, despite juggling university classes, I successfully developed this freelance project—a website completed within just 25 days. This experience demonstrated my ability to manage time effectively and meet tight deadlines.",
-        demoLink: 'https://hi-techengineering.com/management/'
-    },
-    {
-        img: './assets/images/iptv.jpeg',
-        title: 'Personal Project IPTV Application',
-        description: 'Due to the lack of reliable IPTV providers in my country, all existing apps suffer from lags and loading issues. Therefore, I developed a custom IPTV application for my household, providing my family with a seamless mobile streaming experience free from buffering.',
-        demoLink: '#'
+        description: 'Online food ordering system that simplifies restaurant orders, manages promotions, tracks benefits, and improves customer engagement.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
     },
     {
         img: './assets/images/chatbot.png',
-        title: 'Chatbot PHP',
-        description: "In my web programming class in 2018, I completed a chatbot application project that earned me the highest grade. Having successfully executed this project, I aim to enhance it by incorporating advanced techniques and modern design principles for a more sophisticated user experience.",
+        title: 'Chatbot Application',
+        description: 'Web programming project chatbot with AI-driven conversations. Top grade achievement. Currently improving with advanced techniques and modern UI.',
         demoLink: 'https://github.com/arifulUTM/Chatbot-with-PHP'
     },
     {
-        img: './assets/images/pmsri.png',
-        title: 'Malaysian Social Research Institute',
-        description: "During my time at TraitQuest, I developed a web application for a Malaysian client. You can click the link to explore the site in more detail.",
-        demoLink: "https://msri.org.my/"
+        img: './assets/images/msri.png',
+        title: 'Malaysian Social Research Institute Web Application',
+        description: 'Custom PHP/MySQL web app for a Malaysian client, delivering a dynamic and interactive platform with optimized performance.',
+        demoLink: 'https://msri.org.my/'
     },
     {
-        img: './assets/images/chatbot.png',
-        title: 'Lost and Found Application',
-        description: "This project aimed to facilitate the easy retrieval of lost items through the use of Servlets, JSP, Maven, and MySQL. It involved developing a robust web application with features like item registration, search functionalities, and user authentication to streamline the process effectively",
-        demoLink: 'https://github.com/arifulUTM/Lost-and-Found'
+        img: './assets/images/iptv.jpeg',
+        title: 'IPTV Application – Flutter-Based Streaming',
+        description: 'A Flutter IPTV application built to address unreliable providers, ensuring smooth, lag-free streaming with a user-friendly interface.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
     },
     {
-        img: './assets/images/chatbot.png',
-        title: 'Unique Class Managment System',
-        description: "This project was a part of our Application Development course, completed with a team of four members under the guidance of Dr. Ahmad Fadhil Yusof during my university years. It provided valuable experience in collaborative software development and project management.",
-        demoLink: 'https://github.com/arifulUTM/Application-Development-Project-UTM-2020'
+        img: './assets/images/covid-care.png',
+        title: 'Covid Care Website',
+        description: 'Website providing health tips and real-time COVID-19 updates, integrated with a chatbot for instant guidance.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
     },
     {
-        img: './assets/images/chatbot.png',
-        title: 'FAQ section',
-        description: "I recently created an FAQ section for Bangladeshi students interested in studying in Latvia. This resource aims to address their many questions and provide better guidance.",
-        demoLink: 'https://arifulatwork.github.io/lv-ariful.github.io/'
+        img: './assets/images/photocopy.png',
+        title: 'Photocopying Machine Project',
+        description: 'Hands-on circuit design project simulating a Xerox machine, enhancing practical skills in electronics with decoder, counter, comparator, and clock disable.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
     },
-    // Add more portfolio items as needed
+    {
+        img: './assets/images/productivity-app.png',
+        title: 'Productivity and Task Management App',
+        description: 'Flutter-based mobile application with Calendar, Tasks, and Notes features to enhance organization and productivity.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
+    },
+    {
+        img: './assets/images/pathfinder.png',
+        title: 'Pathfinder – Travel Guide Application',
+        description: 'Final year thesis project: Travel guide app with COVID-19 contact tracing, built using Flutter, Firebase, and Google Cloud APIs.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
+    },
+    {
+        img: './assets/images/travel-guide.png',
+        title: 'Travel Guide Web Application',
+        description: 'In-development travel guide app for a Spanish company, built with React.js and Laravel, featuring real-time data, authentication, and cloud storage.',
+        demoLink: 'https://resume-jade-seven.vercel.app/projects'
+    }
 ];
 
 let currentIndex = 0;
