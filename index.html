@@ -601,10 +601,31 @@
             background: var(--bg-gradient);
         }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        .portfolio-slider-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: var(--radius-2xl);
+        }
+
+        .portfolio-slider {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             gap: var(--space-2xl);
+        }
+
+        .portfolio-slide {
+            flex: 0 0 calc(33.333% - var(--space-2xl));
+            min-width: 0;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: scale(0.95);
+        }
+
+        .portfolio-slide.active {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .portfolio-card {
@@ -614,6 +635,7 @@
             box-shadow: var(--shadow-xl);
             transition: var(--transition-normal);
             position: relative;
+            height: 100%;
         }
 
         .portfolio-card:hover {
@@ -673,6 +695,68 @@
             margin-bottom: var(--space-lg);
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        /* Slider Navigation */
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-lg);
+            margin-top: var(--space-3xl);
+        }
+
+        .slider-btn {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            box-shadow: var(--shadow-md);
+        }
+
+        .slider-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .slider-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slider-btn:disabled:hover {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .slider-dots {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-color);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
         }
 
         /* Enhanced Experience Section */
@@ -958,6 +1042,10 @@
             .section-title {
                 font-size: 2.75rem;
             }
+            
+            .portfolio-slide {
+                flex: 0 0 calc(50% - var(--space-2xl));
+            }
         }
 
         @media (max-width: 1024px) {
@@ -1018,6 +1106,10 @@
             .timeline-item::before {
                 left: -18px;
             }
+            
+            .portfolio-slide {
+                flex: 0 0 calc(100% - var(--space-2xl));
+            }
         }
 
         @media (max-width: 768px) {
@@ -1039,10 +1131,6 @@
             
             .section-subtitle {
                 font-size: 1.125rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
             }
             
             .stats-grid {
@@ -1113,6 +1201,11 @@
                 min-width: 140px;
                 justify-content: center;
             }
+            
+            .slider-nav {
+                flex-wrap: wrap;
+                gap: var(--space-md);
+            }
         }
 
         @media (max-width: 480px) {
@@ -1139,10 +1232,6 @@
             
             .stat-number {
                 font-size: 2rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
             }
             
             .portfolio-content {
@@ -1344,8 +1433,25 @@
                     A selection of my recent work across web and mobile development
                 </p>
             </div>
-            <div class="portfolio-grid" id="portfolioGrid">
-                <!-- Portfolio items will be dynamically inserted here -->
+            
+            <div class="portfolio-slider-container">
+                <div class="portfolio-slider" id="portfolioSlider">
+                    <!-- Portfolio slides will be dynamically inserted here -->
+                </div>
+            </div>
+            
+            <div class="slider-nav">
+                <button class="slider-btn" id="prevBtn" aria-label="Previous project">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="slider-dots" id="sliderDots">
+                    <!-- Dots will be dynamically inserted here -->
+                </div>
+                
+                <button class="slider-btn" id="nextBtn" aria-label="Next project">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -1489,35 +1595,153 @@
                 description: 'In-development travel guide app for a Spanish company, built with React.js and Laravel, featuring real-time data, authentication, and cloud storage.',
                 demoLink: '#',
                 technologies: ['React', 'Laravel', 'MySQL']
+            },
+            {
+                img: './assets/images/placeholder.png',
+                title: 'AI Research Platform',
+                description: 'Developed an AI-powered research platform for academic collaboration and knowledge sharing with advanced search and recommendation features.',
+                demoLink: '#',
+                technologies: ['Python', 'TensorFlow', 'React', 'MongoDB']
+            },
+            {
+                img: './assets/images/placeholder.png',
+                title: 'E-commerce Solution',
+                description: 'Built a comprehensive e-commerce platform with payment integration, inventory management, and customer analytics dashboard.',
+                demoLink: '#',
+                technologies: ['Laravel', 'Vue.js', 'MySQL', 'Stripe API']
             }
         ];
 
-        // Initialize portfolio grid with enhanced cards
-        function initializePortfolio() {
-            const grid = document.getElementById('portfolioGrid');
-            portfolioItems.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'portfolio-card fade-in';
-                card.innerHTML = `
-                    <div class="portfolio-image-container">
-                        <img src="${item.img}" alt="${item.title}" class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <a href="${item.demoLink}" target="_blank" class="btn btn-primary">
-                                <i class="fas fa-external-link-alt"></i>
-                                Live Demo
-                            </a>
+        // Slider functionality
+        let currentSlide = 0;
+        let slidesPerView = 3;
+        let autoSlideInterval;
+
+        // Initialize portfolio slider
+        function initializePortfolioSlider() {
+            const slider = document.getElementById('portfolioSlider');
+            const dotsContainer = document.getElementById('sliderDots');
+            
+            // Clear existing content
+            slider.innerHTML = '';
+            dotsContainer.innerHTML = '';
+            
+            // Create slides
+            portfolioItems.forEach((item, index) => {
+                const slide = document.createElement('div');
+                slide.className = `portfolio-slide fade-in ${index === 0 ? 'active' : ''}`;
+                slide.innerHTML = `
+                    <div class="portfolio-card">
+                        <div class="portfolio-image-container">
+                            <img src="${item.img}" alt="${item.title}" class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <a href="${item.demoLink}" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Live Demo
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">${item.title}</h3>
-                        <p class="portfolio-description">${item.description}</p>
-                        <div class="skill-tags">
-                            ${item.technologies.map(tech => `<span class="skill-tag">${tech}</span>`).join('')}
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">${item.title}</h3>
+                            <p class="portfolio-description">${item.description}</p>
+                            <div class="skill-tags">
+                                ${item.technologies.map(tech => `<span class="skill-tag">${tech}</span>`).join('')}
+                            </div>
                         </div>
                     </div>
                 `;
-                grid.appendChild(card);
+                slider.appendChild(slide);
+                
+                // Create dot
+                const dot = document.createElement('div');
+                dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
+                dot.dataset.index = index;
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
             });
+            
+            updateSlidesPerView();
+            updateSlider();
+        }
+
+        // Update slides per view based on screen size
+        function updateSlidesPerView() {
+            if (window.innerWidth <= 900) {
+                slidesPerView = 1;
+            } else if (window.innerWidth <= 1200) {
+                slidesPerView = 2;
+            } else {
+                slidesPerView = 3;
+            }
+        }
+
+        // Update slider position
+        function updateSlider() {
+            const slider = document.getElementById('portfolioSlider');
+            const slides = document.querySelectorAll('.portfolio-slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            // Calculate slide width based on slides per view
+            const slideWidth = 100 / slidesPerView;
+            const translateX = -currentSlide * slideWidth;
+            
+            slider.style.transform = `translateX(${translateX}%)`;
+            
+            // Update active states
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide >= portfolioItems.length - slidesPerView;
+        }
+
+        // Go to specific slide
+        function goToSlide(index) {
+            currentSlide = Math.max(0, Math.min(index, portfolioItems.length - slidesPerView));
+            updateSlider();
+            resetAutoSlide();
+        }
+
+        // Next slide
+        function nextSlide() {
+            if (currentSlide < portfolioItems.length - slidesPerView) {
+                currentSlide++;
+                updateSlider();
+            } else {
+                // Loop back to first slide
+                currentSlide = 0;
+                updateSlider();
+            }
+            resetAutoSlide();
+        }
+
+        // Previous slide
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlider();
+            } else {
+                // Loop to last slide
+                currentSlide = portfolioItems.length - slidesPerView;
+                updateSlider();
+            }
+            resetAutoSlide();
+        }
+
+        // Auto slide functionality
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
         }
 
         // Enhanced theme toggle functionality
@@ -1634,8 +1858,6 @@
             }, 200);
         }
 
-        setInterval(updateContactInfo, 8000);
-
         // Load saved theme
         function loadSavedTheme() {
             const savedTheme = localStorage.getItem('theme') || 'light';
@@ -1648,9 +1870,22 @@
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             loadSavedTheme();
-            initializePortfolio();
+            initializePortfolioSlider();
             initScrollAnimations();
             initNavbarScroll();
+            
+            // Set up slider navigation
+            document.getElementById('prevBtn').addEventListener('click', prevSlide);
+            document.getElementById('nextBtn').addEventListener('click', nextSlide);
+            
+            // Start auto slide
+            startAutoSlide();
+            
+            // Update slides per view on resize
+            window.addEventListener('resize', () => {
+                updateSlidesPerView();
+                updateSlider();
+            });
             
             // Add loading animation
             document.body.style.opacity = '0';
@@ -1659,6 +1894,9 @@
             setTimeout(() => {
                 document.body.style.opacity = '1';
             }, 100);
+            
+            // Start contact info rotation
+            setInterval(updateContactInfo, 8000);
         });
 
         // Add smooth scrolling for navigation links
