@@ -367,6 +367,27 @@
             transform: rotate(15deg);
         }
 
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-lg);
+            transition: var(--transition-fast);
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--bg-secondary);
+            color: var(--primary);
+        }
+
         /* Enhanced Hero Section */
         .hero {
             min-height: 100vh;
@@ -885,7 +906,60 @@
             border: 1px solid rgba(var(--border-color), 0.2);
         }
 
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: var(--bg-card);
+            backdrop-filter: var(--blur-lg);
+            border-bottom: 1px solid var(--border-color);
+            padding: var(--space-lg) 0;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: var(--transition-normal);
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            text-align: center;
+        }
+
+        .mobile-nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.125rem;
+            padding: var(--space-md) 0;
+            display: block;
+            transition: var(--transition-fast);
+        }
+
+        .mobile-nav-link:hover {
+            color: var(--primary);
+        }
+
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.75rem;
+            }
+        }
+
         @media (max-width: 1024px) {
             .hero-title {
                 font-size: 3rem;
@@ -900,24 +974,71 @@
                 grid-template-columns: 1fr;
                 gap: var(--space-2xl);
             }
+            
+            .hero-content {
+                gap: var(--space-2xl);
+            }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
             
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.75rem;
             }
             
-            .nav-links {
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .profile-image-container::before {
                 display: none;
             }
             
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: var(--space-2xl);
+                margin-left: 0;
+            }
+            
+            .timeline-item::before {
+                left: -18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-lg);
+            }
+            
+            .section {
+                padding: var(--space-3xl) 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
             .section-title {
-                font-size: 2rem;
+                font-size: 2.25rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.125rem;
             }
             
             .portfolio-grid {
@@ -931,26 +1052,135 @@
             .footer-content {
                 flex-direction: column;
                 text-align: center;
+                gap: var(--space-xl);
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--space-lg);
+            }
+            
+            .contact-icon {
+                width: 56px;
+                height: 56px;
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2.25rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .card {
+                padding: var(--space-xl);
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .social-link {
+                flex: 1;
+                min-width: 140px;
+                justify-content: center;
             }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 0 var(--space-lg);
+                padding: 0 var(--space-md);
             }
             
             .hero-title {
                 font-size: 2rem;
             }
             
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
+            .section-title {
+                font-size: 1.75rem;
             }
             
-            .btn {
-                width: 100%;
-                justify-content: center;
+            .hero-badge {
+                font-size: 0.875rem;
+                padding: var(--space-xs) var(--space-md);
+            }
+            
+            .stat-item {
+                padding: var(--space-md);
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-content {
+                padding: var(--space-xl);
+            }
+            
+            .timeline-item {
+                padding: var(--space-xl) 0 var(--space-xl) var(--space-xl);
+            }
+            
+            .timeline-title {
+                font-size: 1.25rem;
+            }
+            
+            .timeline-company {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .skill-category {
+                padding: var(--space-lg);
+            }
+            
+            .contact-item {
+                padding: var(--space-lg);
             }
         }
     </style>
@@ -967,11 +1197,25 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
             <button class="theme-toggle" id="themeToggle">
                 <i class="fas fa-moon"></i>
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+            <li><a href="#portfolio" class="mobile-nav-link">Portfolio</a></li>
+            <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1295,6 +1539,29 @@
             
             // Save theme preference
             localStorage.setItem('theme', newTheme);
+        });
+
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.className = 'fas fa-bars';
+            });
         });
 
         // Enhanced scroll animations
