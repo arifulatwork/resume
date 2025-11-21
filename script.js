@@ -57,6 +57,27 @@
             demoLink: 'https://resume-jade-seven.vercel.app/projects',
             technologies: ['JavaScript', 'JSON', 'REST API', 'PHP']
             },
+            {
+            img: './assets/images/tood.webp',
+            title: 'Task Management Mobile Apps',
+            description: 'This is a task management mobile application designed to help users stay organized and boost productivity.',
+            demoLink: 'https://github.com/Yasser-dev/what-to-do',
+            technologies: ['Flutter', 'JSON', 'REST API', 'Firebase']
+            },
+            {
+            img: './assets/images/xerox.webp',
+            title: 'Photocopying (Xerox) Machine',
+            description: 'successfully completed the project and built a working circuit based on the problem we identified.',
+            demoLink: 'https://github.com/Yasser-dev/what-to-do',
+            technologies: ['Digital Logic', 'Circuit']
+            },
+            {
+            img: './assets/images/covid.webp',
+            title: 'Covid Care',
+            description: 'My project focused on COVID-19. We developed a website that provides health related tips along with real-time updates on the coronavirus situation around the world.',
+            demoLink: 'https://github.com/arifulUTM/COVID-CARE',
+            technologies: ['JavaScript', 'PHP', 'REST API']
+            },
             ];
 
         // Slider functionality
