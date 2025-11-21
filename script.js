@@ -23,12 +23,18 @@
                 technologies: ['Flutter', 'Dart', 'Firebase']
             },
             {
+                img: './assets/images/Application.webp',
+                title: 'Pathfinder - A Travel Guide Application',
+                description: 'Pathfinder is a travel guide app with COVID-19 safety features, built with Flutter, Firebase, and Google Cloud, developed for my undergraduate thesis.',
+                demoLink: 'https://bitbucket.org/pro_ariful/pathfinder-a-travel-guide-mobile-application/src/master/pathfinder/',
+                technologies: ['Flutter', 'Google Cloud Platform', 'Firebase']
+            },
+            {
             img: './assets/images/lost.webp',
             title: 'Lost and Found Web Application',
             description: 'Developed a robust lost-and-found web platform using Servlets, JSP, Maven, and MySQL with item registration, search, and authentication features.',
             demoLink: 'https://github.com/arifulUTM/Lost-and-Found',
             technologies: ['Java Servlet', 'JSP', 'MySQL']
-
             },
             {
                 img: './assets/images/travel.webp',
