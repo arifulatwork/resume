@@ -78,6 +78,42 @@
             demoLink: 'https://github.com/arifulUTM/COVID-CARE',
             technologies: ['JavaScript', 'PHP', 'REST API']
             },
+            {
+                img: './assets/images/remoteoldtv.webp',
+                title: 'OLD TV Remote',
+                description: 'Designed for viewers who miss the simplicity of classic television — instant channel buttons, responsive controls, and uninterrupted entertainment.',
+                demoLink: 'hhttps://github.com/AmraManush/remote',
+                technologies: ['Next JS', 'TypeScript', 'Firebase']
+            }
+            ,{
+                img: './assets/images/oldtv.webp',
+                title: 'OLD TV UI/UX',
+                description: 'Designed for viewers who miss the simplicity of classic television — instant channel buttons, responsive controls, and uninterrupted entertainment.',
+                demoLink: 'https://github.com/arifulatwork/Nostalgia-Mine-OLD-TV',
+                technologies: ['Next JS', 'TypeScript', 'Firebase']
+            }
+            ,{
+                img: './assets/images/oldtvbutton.webp',
+                title: 'OLD TV Button',
+                description: 'Designed for viewers who miss the simplicity of classic television — instant channel buttons, responsive controls, and uninterrupted entertainment.',
+                demoLink: 'https://github.com/AmraManush/oldtv-with-button-channel-change',
+                technologies: ['Next JS', 'TypeScript', 'Firebase']
+            }
+           
+            ,{
+                img: './assets/images/remoteNew.webp',
+                title: 'New TV Web Application (Remote)',
+                description: 'TV Dekhbo is a modern IPTV streaming platform built for smooth entertainment, real-time access, and a user-friendly viewing experience across all devices.',
+                demoLink: 'https://github.com/AmraManush/tv-dekhbo',
+                technologies: ['Next JS', 'TypeScript', 'Firebase']
+            },
+            {
+                img: './assets/images/remoteNew.webp',
+                title: 'Remote for New TV',
+                description: 'Powerful real-time remote management for IPTV platforms — optimized for performance, usability, and multi-device compatibility.',
+                demoLink: 'https://github.com/AmraManush/remoteCholo',
+                technologies: ['Next JS', 'TypeScript', 'Firebase']
+            },
             ];
 
         // Slider functionality
