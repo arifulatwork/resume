@@ -1,6 +1,12 @@
 const portfolioItems = [
     {
         img: './assets/images/bravori.png',
+        title: 'Wakeup Projects',
+        description: 'Developed the official website for Wake Up Projects, an Erasmus+ mobility organization. Built a responsive, multilingual platform with improved performance, modern UI, and an enhanced user experience.',
+        demoLink: 'https://wakeup-projects.com'
+    },
+    {
+        img: './assets/images/bravori.png',
         title: 'Bravori',
         description: 'Fixed multiple bugs in a React Native music school application designed for children to learn music. Improved performance and user experience.',
         demoLink: 'https://play.google.com/store/apps/details?id=com.bravorimusic.bravori'
