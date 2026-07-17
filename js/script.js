@@ -64,6 +64,55 @@ const portfolioItems = [
   demoLink: 'https://bitbucket.org/arifulatwork-admin/bus-ticket/src/main/',
   technologies: ['JavaScript', 'PHP', 'MySQL', 'REST API']
 },
+{
+  img: './assets/images/stockPredictor.webp',
+  title: 'Stock Predictor',
+  description: 'Developed an AI-powered stock prediction system with a React frontend and Flask backend. Trained TensorFlow models to forecast stock opening and closing prices, with interactive data visualization and prediction insights.',
+  demoLink: 'https://bitbucket.org/arifulatwork-admin/stock-market-predictor-python/src',
+  technologies: ['React', 'Flask', 'TensorFlow', 'Python']
+},
+{
+  img: './assets/images/job.webp',
+  title: 'FindITJobs Web Application',
+  description: 'Built a Laravel-based job portal with an integrated admin dashboard for managing job postings, applications, employers, and candidates. Implemented authentication, role-based access control, and responsive UI.',
+  demoLink: 'https://github.com/arifulatwork/FindITJobs',
+  technologies: ['Laravel', 'PHP', 'MySQL', 'Bootstrap']
+},
+{
+  img: './assets/images/market.webp',
+  title: 'Classified Marketplace',
+  description: 'Developed a classified marketplace platform where users can buy and sell products securely. Implemented authentication, product listings, search filters, messaging, and transaction management.',
+  demoLink: 'https://resume-jade-seven.vercel.app/projects',
+  technologies: ['Laravel', 'PHP', 'MySQL', 'Bootstrap']
+},
+{
+  img: './assets/images/pos.webp',
+  title: 'Point of Sale (POS) System',
+  description: 'Developed a PHP-based Point of Sale system using the MVC architecture. Features include inventory management, sales tracking, customer records, reporting, and secure user authentication.',
+  demoLink: 'https://github.com/arifulatwork/Point-of-sales',
+  technologies: ['PHP', 'MySQL', 'MVC', 'Bootstrap']
+},
+{
+  img: './assets/images/pos.webp',
+  title: 'Restoran Nasi Lounge',
+  description: 'Developed an online food ordering and restaurant management system with menu management, order tracking, promotional campaigns, and customer engagement features.',
+  demoLink: 'https://resume-jade-seven.vercel.app/projects',
+  technologies: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript']
+},
+{
+  img: './assets/images/chat.webp',
+  title: 'AI Chatbot Application',
+  description: 'Built an AI-powered chatbot capable of handling natural conversations. Initially developed as a university project with top-grade recognition and later enhanced with modern UI and advanced conversational capabilities.',
+  demoLink: 'https://github.com/arifulUTM/Chatbot-with-PHP',
+  technologies: ['PHP', 'JavaScript', 'AI', 'MySQL']
+},
+{
+  img: './assets/images/msri.webp',
+  title: 'Malaysian Social Research Institute',
+  description: 'Developed a custom web application for the Malaysian Social Research Institute, providing dynamic content management, optimized performance, and an intuitive user experience.',
+  demoLink: 'https://msri.org.my/',
+  technologies: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript']
+},
 { img:'./assets/images/xerox.webp', title:'Photocopying (Xerox) Machine', description:'Successfully completed the project and built a working circuit based on the problem we identified.', demoLink:'https://github.com/Yasser-dev/what-to-do', technologies:['Digital Logic','Circuit'] },
 { img:'./assets/images/covid.webp', title:'Covid Care', description:'A website that provides health-related tips along with real-time updates on the coronavirus situation around the world.', demoLink:'https://github.com/arifulUTM/COVID-CARE', technologies:['JavaScript','PHP','REST API'] },
 
