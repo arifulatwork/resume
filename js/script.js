@@ -57,8 +57,17 @@ const portfolioItems = [
 { img:'./assets/images/aitools.webp', title:'AI Research Platform', description:'Developed an AI-powered research platform for academic collaboration and knowledge sharing with advanced search and recommendation features.', demoLink:'#', technologies:['Python','TensorFlow','React','MongoDB'] },
 { img:'./assets/images/covidTracker.webp', title:'Covid Tracker', description:'React.js application showing real-time COVID-19 stats using Disease.sh API. Includes filtering by country and interactive map visualization.', demoLink:'https://resume-jade-seven.vercel.app/projects', technologies:['JavaScript','JSON','REST API','PHP'] },
 { img:'./assets/images/tood.webp', title:'Task Management Mobile App', description:'A task management mobile application designed to help users stay organized and boost productivity.', demoLink:'https://github.com/Yasser-dev/what-to-do', technologies:['Flutter','JSON','REST API','Firebase'] },
+{
+  img: './assets/images/busticket.webp',
+  title: 'Bus Ticket Booking',
+  description: 'A full-stack bus ticket booking application that enables users to search routes, check seat availability, book tickets, make secure online payments, and manage reservations through an intuitive interface.',
+  demoLink: 'https://bitbucket.org/arifulatwork-admin/bus-ticket/src/main/',
+  technologies: ['JavaScript', 'PHP', 'MySQL', 'REST API']
+},
 { img:'./assets/images/xerox.webp', title:'Photocopying (Xerox) Machine', description:'Successfully completed the project and built a working circuit based on the problem we identified.', demoLink:'https://github.com/Yasser-dev/what-to-do', technologies:['Digital Logic','Circuit'] },
 { img:'./assets/images/covid.webp', title:'Covid Care', description:'A website that provides health-related tips along with real-time updates on the coronavirus situation around the world.', demoLink:'https://github.com/arifulUTM/COVID-CARE', technologies:['JavaScript','PHP','REST API'] },
+
+
 ];
 const dot = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
