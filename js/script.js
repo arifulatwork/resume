@@ -1,12 +1,3 @@
-// ============ DATA ============
-// const portfolioItems = [
-//   { img:'./assets/images/remoteoldtv.webp', title:'OLD TV Remote', description:'Designed for viewers who miss the simplicity of classic television — instant channel buttons, responsive controls, and uninterrupted entertainment.', demoLink:'https://github.com/AmraManush/remote', technologies:['Next JS','TypeScript','Firebase'] },
-//   { img:'./assets/images/oldtv.webp', title:'OLD TV UI/UX', description:'Designed for viewers who miss the simplicity of classic television — instant channel buttons, responsive controls, and uninterrupted entertainment.', demoLink:'https://github.com/arifulatwork/Nostalgia-Mine-OLD-TV', technologies:['Next JS','TypeScript','Firebase'] },
-//   { img:'./assets/images/oldtvbutton.webp', title:'OLD TV Button', description:'Designed for viewers who miss the simplicity of classic television — instant channel buttons, responsive controls, and uninterrupted entertainment.', demoLink:'https://github.com/AmraManush/oldtv-with-button-channel-change', technologies:['Next JS','TypeScript','Firebase'] },
-//   { img:'./assets/images/remoteNew.webp', title:'New TV Web Application (Remote)', description:'TV Dekhbo is a modern IPTV streaming platform built for smooth entertainment, real-time access, and a user-friendly viewing experience across all devices.', demoLink:'https://github.com/AmraManush/tv-dekhbo', technologies:['Next JS','TypeScript','Firebase'] },
-//   { img:'./assets/images/remoteNew.webp', title:'Remote for New TV', description:'Powerful real-time remote management for IPTV platforms — optimized for performance, usability, and multi-device compatibility.', demoLink:'https://github.com/AmraManush/remoteCholo', technologies:['Next JS','TypeScript','Firebase'] },
-// ];
-
 const portfolioItems = [
 {
   img:'./assets/images/nazatai.webp',
@@ -118,139 +109,85 @@ const portfolioItems = [
 
 
 ];
-const dot = document.getElementById('cursorDot');
-const ring = document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
-(function animRing(){
-  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
-  ring.style.left=rx+'px'; ring.style.top=ry+'px';
-  requestAnimationFrame(animRing);
-})();
 
-// ============ NAV ============
-const nav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+// ============ RENDER ============
+const grid = document.getElementById('projects');
+const filtersEl = document.getElementById('filters');
+const moreBtn = document.getElementById('moreBtn');
+const LIMIT = 6;
+let expanded = false, active = 'All';
 
-// Mobile menu
-const menuBtn = document.getElementById('menuBtn');
-const mobileNav = document.getElementById('mobileNav');
-const mobileClose = document.getElementById('mobileClose');
-menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
-mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
-document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+const groups = {
+  All: () => true,
+  AI: p => /AI|TensorFlow|OpenRouter|Open Router/i.test(p.technologies.join(' ')),
+  Web: p => p.technologies.some(t => /Laravel|PHP|React$|Next|Bootstrap|Servlet|JSP/i.test(t)),
+  Mobile: p => p.technologies.some(t => /Flutter|Dart|React Native|Expo/i.test(t))
+};
 
-// Theme
-const themeBtn = document.getElementById('themeBtn');
-const themeIcon = document.getElementById('themeIcon');
-let theme = localStorage.getItem('theme') || 'dark';
-function applyTheme(t) {
-  document.body.setAttribute('data-theme', t);
-  themeIcon.className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-  localStorage.setItem('theme', t);
-}
-applyTheme(theme);
-themeBtn.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(theme); });
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-// ============ SLIDER ============
-let cur = 0;
-function getSpv() {
-  if (window.innerWidth <= 768) return 1;
-  if (window.innerWidth <= 1024) return 2;
-  return 3;
-}
-const track = document.getElementById('sliderTrack');
-const dotsEl = document.getElementById('sliderDots');
-
-function buildSlider() {
-  track.innerHTML = '';
-  dotsEl.innerHTML = '';
-  portfolioItems.forEach((item, i) => {
-    const card = document.createElement('div');
-    card.className = 'proj-card';
-    card.innerHTML = `
-      <div class="proj-inner">
-        <div class="proj-img-wrap">
-          <img src="${item.img}" alt="${item.title}" class="proj-img" loading="lazy">
-          <div class="proj-overlay">
-            <a href="${item.demoLink}" target="_blank" class="btn btn-primary" style="font-size:0.75rem;padding:0.7rem 1.4rem;">
-              <i class="fas fa-external-link-alt"></i> View Project
-            </a>
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">${item.title}</div>
-          <p class="proj-desc">${item.description}</p>
-          <div class="proj-tags">${item.technologies.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div>
-        </div>
-      </div>`;
-    track.appendChild(card);
-
-    const dot = document.createElement('div');
-    dot.className = 'dot' + (i===0?' active':'');
-    dot.addEventListener('click', () => goTo(i));
-    dotsEl.appendChild(dot);
-  });
-  updateSlider();
+function card(p) {
+  const tags = p.technologies.filter(Boolean).slice(0, 4).map(t => `<span>${esc(t)}</span>`).join('');
+  const link = p.demoLink && p.demoLink !== '#'
+    ? `<a class="link" href="${esc(p.demoLink)}" target="_blank" rel="noopener">View project ↗</a>` : '';
+  return `<article class="proj rv">
+    <div class="img"><img src="${esc(p.img)}" alt="${esc(p.title)}" loading="lazy" onerror="this.style.display='none'"></div>
+    <div class="body"><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><p class="tags">${tags}</p>${link}</div>
+  </article>`;
 }
 
-function updateSlider() {
-  const spv = getSpv();
-  const pct = 100 / spv;
-  document.querySelectorAll('.proj-card').forEach(c => c.style.flex = `0 0 ${pct}%`);
-  const max = portfolioItems.length - spv;
-  cur = Math.min(cur, Math.max(0, max));
-  track.style.transform = `translateX(-${cur * pct}%)`;
-  document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i===cur));
-  document.getElementById('prevBtn').disabled = cur === 0;
-  document.getElementById('nextBtn').disabled = cur >= max;
+function render() {
+  const list = portfolioItems.filter(groups[active]);
+  const shown = expanded ? list : list.slice(0, LIMIT);
+  grid.innerHTML = shown.map(card).join('');
+  moreBtn.parentElement.classList.toggle('hide', list.length <= LIMIT);
+  moreBtn.textContent = expanded ? 'Show fewer' : `Show all ${list.length} projects`;
+  observe();
 }
 
-function goTo(i) { cur = i; updateSlider(); resetAuto(); }
-function next() { const spv=getSpv(); cur = cur >= portfolioItems.length-spv ? 0 : cur+1; updateSlider(); }
-function prev() { cur = cur <= 0 ? portfolioItems.length-getSpv() : cur-1; updateSlider(); }
+filtersEl.innerHTML = Object.keys(groups).map(k =>
+  `<button data-k="${k}" class="${k === 'All' ? 'on' : ''}">${k}</button>`).join('');
+filtersEl.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  active = b.dataset.k; expanded = false;
+  filtersEl.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+  // highlight active nav link
+const secs = [...document.querySelectorAll('main section[id]')];
+const navLinks = [...links.querySelectorAll('a')];
+addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(sec => { if (scrollY + 120 >= sec.offsetTop) cur = sec.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+}, { passive: true });
 
-document.getElementById('prevBtn').addEventListener('click', () => { prev(); resetAuto(); });
-document.getElementById('nextBtn').addEventListener('click', () => { next(); resetAuto(); });
-
-let autoTimer;
-function startAuto() { autoTimer = setInterval(next, 5000); }
-function resetAuto() { clearInterval(autoTimer); startAuto(); }
-window.addEventListener('resize', () => { updateSlider(); });
-
-// ============ REVEAL ============
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// ============ CONTACT ROTATION ============
-const emails = ['arifulatwork@gmail.com','Md-Ariful.Islam@edu.rtu.lv','Md-Ariful.Islam@rtu.lv'];
-const locs = ['Liepāja, Latvia','Available Remotely'];
-let ei=0, li=0;
-setInterval(() => {
-  ei = (ei+1)%emails.length; li = (li+1)%locs.length;
-  const ev = document.getElementById('emailVal');
-  const lv = document.getElementById('locVal');
-  ev.style.opacity='0'; lv.style.opacity='0';
-  setTimeout(() => {
-    ev.textContent = emails[ei]; lv.textContent = locs[li];
-    ev.style.opacity='1'; lv.style.opacity='1';
-    ev.style.transition='opacity 0.4s'; lv.style.transition='opacity 0.4s';
-  }, 300);
-}, 8000);
-
-// ============ SMOOTH SCROLL ============
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
-  });
+render();
 });
+moreBtn.addEventListener('click', () => { expanded = !expanded; render(); });
 
-// ============ INIT ============
-buildSlider();
-startAuto();
-document.body.style.opacity = '0';
-document.body.style.transition = 'opacity 0.6s ease';
-window.addEventListener('load', () => { document.body.style.opacity = '1'; });
+// reveal on scroll
+const io = 'IntersectionObserver' in window
+  ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 })
+  : null;
+function observe() {
+  document.querySelectorAll('.rv:not(.in)').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+}
+document.querySelectorAll('.card,.row,.stats>div,.hero-text,.prose').forEach(el => el.classList.add('rv'));
+
+// nav
+const nav = document.getElementById('nav');
+const links = document.getElementById('links');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+document.getElementById('burger').addEventListener('click', () => links.classList.toggle('open'));
+links.addEventListener('click', () => links.classList.remove('open'));
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// highlight active nav link
+const secs = [...document.querySelectorAll('main section[id]')];
+const navLinks = [...links.querySelectorAll('a')];
+addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(sec => { if (scrollY + 120 >= sec.offsetTop) cur = sec.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+}, { passive: true });
+
+render();
