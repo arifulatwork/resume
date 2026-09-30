@@ -30,7 +30,7 @@ img{max-width:100%;display:block}
 .hero-in{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--mut);background:#fff}
 .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;display:inline-block}
-h1{font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-.03em;font-weight:700;margin:20px 0}
+h1{text-wrap:balance;font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-.03em;font-weight:700;margin:20px 0}
 h2{font-size:clamp(28px,3.6vw,40px);line-height:1.15;letter-spacing:-.03em;font-weight:700}
 h3{font-size:18px;letter-spacing:-.01em;font-weight:600}
 .lead{font-size:17px;color:var(--mut);max-width:560px}
